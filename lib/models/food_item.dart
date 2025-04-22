@@ -6,7 +6,7 @@ class FoodItem {
   FoodItem({required this.name, required this.imageURL, required this.price});
 }
 
-List<FoodItem> FoodList = [
+List<FoodItem> foodList = [
   FoodItem(
     name: "Meat Burger",
     imageURL: "https://pngimg.com/d/burger_sandwich_PNG4135.png",

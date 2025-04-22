@@ -11,9 +11,9 @@ class BottomNavBarPage extends StatefulWidget {
 class _BottomNavBarPageState extends State<BottomNavBarPage> {
   int selectedIndex = 0;
   List<Widget> pageForNavBar = [
-    HomePage(),
-    Center(child: Text('favorite')),
-    Center(child: Text('Account')),
+    const HomePage(),
+    const Center(child: Text('favorite')),
+    const Center(child: Text('Account')),
   ];
   void onItemTapped(int newIndex) {
     setState(() {
@@ -27,13 +27,13 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       backgroundColor: Colors.grey[100],
 
       appBar: AppBar(
-        title: Center(child: Text("Mr Burger")),
+        title: const Center(child: Text("Mr Burger")),
         backgroundColor: Colors.grey[100],
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: pageForNavBar[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),

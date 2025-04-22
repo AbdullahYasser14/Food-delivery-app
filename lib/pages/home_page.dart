@@ -3,7 +3,7 @@ import 'package:food_delivery/models/food_item.dart';
 import 'package:food_delivery/widgets/food_grid_item.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +24,16 @@ class HomePage extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * .04),
               GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: FoodList.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: foodList.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   mainAxisSpacing: 20,
                   crossAxisSpacing: 20,
                 ),
                 itemBuilder:
                     (BuildContext context, int index) =>
-                        FoodGridItem(foodItem: FoodList[index]),
+                        FoodGridItem(foodItem: foodList[index]),
               ),
             ],
           ),
