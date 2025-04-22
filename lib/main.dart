@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/home_page.dart';
+import 'package:food_delivery/pages/bottom_nav_bar_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Mr Burger - Food delivery app",
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: BottomNavBarPage(),
     );
   }
 }
