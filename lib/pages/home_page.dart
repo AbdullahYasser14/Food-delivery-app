@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
                 ),
                 itemBuilder:
                     (BuildContext context, int index) =>
-                        FoodGridItem(foodItem: foodList[index]),
+                        FoodGridItem(foodIndex: index),
               ),
             ],
           ),

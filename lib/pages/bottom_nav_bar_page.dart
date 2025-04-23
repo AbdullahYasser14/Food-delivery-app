@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/favorite_page.dart';
 import 'package:food_delivery/pages/home_page.dart';
 
 class BottomNavBarPage extends StatefulWidget {
@@ -12,7 +13,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   int selectedIndex = 0;
   List<Widget> pageForNavBar = [
     const HomePage(),
-    const Center(child: Text('favorite')),
+    const FavoritePage(),
     const Center(child: Text('Account')),
   ];
   void onItemTapped(int newIndex) {
@@ -33,6 +34,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       drawer: const Drawer(),
       body: pageForNavBar[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.grey[100],
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(

@@ -2,8 +2,25 @@ class FoodItem {
   final String name;
   final String imageURL;
   final double price;
+  final bool isFavorite;
 
-  FoodItem({required this.name, required this.imageURL, required this.price});
+  FoodItem({
+    this.isFavorite = false,
+    required this.name,
+    required this.imageURL,
+    required this.price,
+  });
+  FoodItem copyWith({
+    String? name,
+    String? imageURL,
+    double? price,
+    bool? isFavorite,
+  }) => FoodItem(
+    name: name ?? this.name,
+    imageURL: imageURL ?? this.imageURL,
+    price: price ?? this.price,
+    isFavorite: isFavorite ?? this.isFavorite,
+  );
 }
 
 List<FoodItem> foodList = [
