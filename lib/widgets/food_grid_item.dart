@@ -24,8 +24,8 @@ class _FoodGridItemState extends State<FoodGridItem> {
             children: [
               Image.network(
                 foodList[widget.foodIndex].imageURL,
-                height: MediaQuery.of(context).size.height * 0.1,
-                // fit: BoxFit.cover,
+                height: 100,
+                //fit: BoxFit.cover,
               ),
               Align(
                 alignment: Alignment.topRight,
@@ -62,12 +62,12 @@ class _FoodGridItemState extends State<FoodGridItem> {
           const SizedBox(height: 4),
           Text(
             foodList[widget.foodIndex].name,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
           ),
           Text(
             "${foodList[widget.foodIndex].price}\$",
             style: const TextStyle(
-              fontSize: 13,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: Colors.deepOrange,
             ),
