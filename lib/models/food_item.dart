@@ -56,7 +56,7 @@ List<FoodItem> foodList = [
   FoodItem(
     name: "Chicken Nuggets",
     imageURL:
-        "https://w7.pngwing.com/pngs/362/843/png-transparent-chicken-nuggets-crispy-fried-chicken-chicken-nugget-kfc-chicken-fingers-fried-chicken-food-baking-recipe-thumbnail.png",
+        "https://static.vecteezy.com/system/resources/previews/025/222/173/non_2x/chicken-nuggets-isolated-on-transparent-background-png.png",
     price: 10,
   ),
   FoodItem(

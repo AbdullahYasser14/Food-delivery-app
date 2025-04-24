@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.0),
                 child: Image.asset(
                   "assets/images/classic_burger.jpg",
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.24,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -28,8 +28,8 @@ class HomePage extends StatelessWidget {
                 itemCount: foodList.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 20,
-                  crossAxisSpacing: 20,
+                  mainAxisSpacing: 10,
+                  crossAxisSpacing: 10,
                 ),
                 itemBuilder:
                     (BuildContext context, int index) =>
