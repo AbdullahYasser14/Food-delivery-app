@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/pages/acount_page.dart';
 import 'package:food_delivery/pages/favorite_page.dart';
 import 'package:food_delivery/pages/home_page.dart';
 
@@ -14,7 +15,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   List<Widget> pageForNavBar = [
     const HomePage(),
     const FavoritePage(),
-    const Center(child: Text('Account')),
+    const AcountPage(),
   ];
   void onItemTapped(int newIndex) {
     setState(() {

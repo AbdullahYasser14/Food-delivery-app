@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.0),
                 child: Image.asset(
                   "assets/images/classic_burger.jpg",
-                  height: MediaQuery.of(context).size.height * 0.24,
+                  height: MediaQuery.of(context).size.height * 0.25,
                   fit: BoxFit.cover,
                 ),
               ),
