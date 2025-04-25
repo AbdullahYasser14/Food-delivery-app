@@ -24,12 +24,12 @@ class HomePage extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * .04),
               GridView.builder(
                 shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: foodList.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 13,
+                  crossAxisSpacing: 13,
                 ),
                 itemBuilder:
                     (BuildContext context, int index) =>

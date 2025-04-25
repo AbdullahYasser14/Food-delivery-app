@@ -29,7 +29,24 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
       backgroundColor: Colors.grey[100],
 
       appBar: AppBar(
-        title: const Center(child: Text("Mr Burger")),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              "Mr ",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+            ),
+            Text(
+              "BURGER",
+              style: TextStyle(
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+              ),
+            ),
+            const SizedBox(width: 40),
+          ],
+        ),
         backgroundColor: Colors.grey[100],
       ),
       drawer: const Drawer(),
@@ -46,7 +63,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
         ],
         currentIndex: selectedIndex,
         onTap: onItemTapped,
-        selectedItemColor: Colors.deepOrange,
+        selectedItemColor: Theme.of(context).primaryColor,
       ),
     );
   }

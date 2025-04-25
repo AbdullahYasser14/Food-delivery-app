@@ -10,10 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.deepOrange),
       title: "Mr Burger - Food delivery app",
+
       debugShowCheckedModeBanner: false,
-      home: BottomNavBarPage(),
+      home: const BottomNavBarPage(),
     );
   }
 }

@@ -62,10 +62,10 @@ class _FavoritePageState extends State<FavoritePage> {
                             ),
                             Text(
                               "${favoriteList[index].price} \$",
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.deepOrange,
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
                           ],
@@ -84,7 +84,7 @@ class _FavoritePageState extends State<FavoritePage> {
                           });
                         },
                         icon: const Icon(Icons.favorite),
-                        color: Colors.deepOrange,
+                        color: Theme.of(context).primaryColor,
                         iconSize: 30,
                       ),
                     ],

@@ -12,6 +12,7 @@ class FoodGridItem extends StatefulWidget {
 class _FoodGridItemState extends State<FoodGridItem> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
@@ -21,10 +22,11 @@ class _FoodGridItemState extends State<FoodGridItem> {
       child: Column(
         children: [
           Stack(
+            alignment: Alignment.topCenter,
             children: [
               Image.network(
                 foodList[widget.foodIndex].imageURL,
-                height: 100,
+                height: size.height * 0.13,
                 //fit: BoxFit.cover,
               ),
               Align(
@@ -51,7 +53,7 @@ class _FoodGridItemState extends State<FoodGridItem> {
                         foodList[widget.foodIndex].isFavorite
                             ? Icons.favorite
                             : Icons.favorite_border,
-                        color: Colors.deepOrange,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ),
@@ -66,10 +68,10 @@ class _FoodGridItemState extends State<FoodGridItem> {
           ),
           Text(
             "${foodList[widget.foodIndex].price}\$",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: Colors.deepOrange,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ],
