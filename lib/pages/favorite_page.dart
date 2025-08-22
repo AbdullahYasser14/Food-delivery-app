@@ -11,13 +11,17 @@ class FavoritePage extends StatefulWidget {
 class _FavoritePageState extends State<FavoritePage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     final favoriteList =
         foodList.where((foodItem) => foodItem.isFavorite == true).toList();
     if (favoriteList.isEmpty) {
       return Center(
         child: Column(
           children: [
-            Image.asset("assets/images/empty_state.png", height: 350),
+            Image.asset(
+              "assets/images/empty_state.png",
+              height: size.height * .5,
+            ),
             const Text(
               "No favorite item founded !",
               style: TextStyle(
@@ -40,54 +44,70 @@ class _FavoritePageState extends State<FavoritePage> {
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Image.network(
-                        favoriteList[index].imageURL,
-                        height: 90,
-                        width: 90,
-                        //fit: BoxFit.cover,
-                      ),
-                      const SizedBox(width: 8.0),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  child: LayoutBuilder(
+                    builder:
+                        (context, constraints) => Row(
                           children: [
-                            Text(
-                              favoriteList[index].name,
-                              style: const TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
+                            Image.network(
+                              favoriteList[index].imageURL,
+                              //height: constraints.maxHeight * .3,
+                              width: constraints.maxWidth * .3,
+                              //fit: BoxFit.cover,
+                            ),
+                            SizedBox(width: constraints.maxWidth * .02),
+                            Expanded(
+                              child: SizedBox(
+                                width: constraints.maxWidth * .5,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(
+                                      width: constraints.maxWidth * 0.4,
+                                      child: FittedBox(
+                                        child: Text(
+                                          favoriteList[index].name,
+                                          style: const TextStyle(
+                                            // fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: constraints.maxWidth * .125,
+                                      child: FittedBox(
+                                        child: Text(
+                                          "${favoriteList[index].price} \$",
+                                          style: TextStyle(
+                                            //fontSize: 16,
+                                            fontWeight: FontWeight.w400,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            Text(
-                              "${favoriteList[index].price} \$",
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Theme.of(context).primaryColor,
-                              ),
+
+                            IconButton(
+                              onPressed: () {
+                                final targetFood = favoriteList[index];
+                                int foodindex = foodList.indexOf(targetFood);
+                                setState(() {
+                                  foodList[foodindex] = foodList[foodindex]
+                                      .copyWith(isFavorite: false);
+                                  favoriteList.remove(targetFood);
+                                });
+                              },
+                              icon: const Icon(Icons.favorite),
+                              color: Theme.of(context).primaryColor,
+                              iconSize: constraints.maxWidth * .08,
                             ),
                           ],
                         ),
-                      ),
-
-                      IconButton(
-                        onPressed: () {
-                          final targetFood = favoriteList[index];
-                          int foodindex = foodList.indexOf(targetFood);
-                          setState(() {
-                            foodList[foodindex] = foodList[foodindex].copyWith(
-                              isFavorite: false,
-                            );
-                            favoriteList.remove(targetFood);
-                          });
-                        },
-                        icon: const Icon(Icons.favorite),
-                        color: Theme.of(context).primaryColor,
-                        iconSize: 30,
-                      ),
-                    ],
                   ),
                 ),
               ),

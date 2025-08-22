@@ -59,10 +59,4 @@ List<FoodItem> foodList = [
         "https://static.vecteezy.com/system/resources/previews/025/222/173/non_2x/chicken-nuggets-isolated-on-transparent-background-png.png",
     price: 10,
   ),
-  FoodItem(
-    name: "Combo Meal",
-    imageURL:
-        "https://juicerpricing.com/hs-fs/hubfs/Double-cheeseburger-meal-NEW-1.png?width=490&height=429&name=Double-cheeseburger-meal-NEW-1.png",
-    price: 13.25,
-  ),
 ];
