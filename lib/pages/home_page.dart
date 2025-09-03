@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/models/food_item.dart';
+import 'package:food_delivery/pages/food_details_page.dart';
 import 'package:food_delivery/widgets/food_grid_item.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,8 +34,18 @@ class HomePage extends StatelessWidget {
                   crossAxisSpacing: size.height * 0.02,
                 ),
                 itemBuilder:
-                    (BuildContext context, int index) =>
-                        FoodGridItem(foodIndex: index),
+                    (BuildContext context, int index) => InkWell(
+                      onTap:
+                          () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => FoodDetailsPage(
+                                    foodItem: foodList[index],
+                                  ),
+                            ),
+                          ),
+                      child: FoodGridItem(foodIndex: index),
+                    ),
               ),
             ],
           ),
